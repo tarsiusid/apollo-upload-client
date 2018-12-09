@@ -151,6 +151,32 @@ exports.createUploadLink = ({
       const { controller, signal } = createSignalIfSupported()
       if (controller) options.signal = signal
 
+      // If this is a query, let's reassemble a raw query instead of using variables.
+      let body = JSON.parse(options.body);
+      if (body.query) {
+        let rawQuery = body.query.split('{').splice(1).join('{').split('}').slice(0,-1).join('}');
+        let keys = Object.keys(body.variables);
+        for (const i in keys) {
+          let val;
+          if (keys[i].toLowerCase() === 'id' || typeof body.variables[keys[i]] === 'number') {
+            val = body.variables[keys[i]];
+          } else {
+            // Otherwise, it must be a string
+            val = '\'' + body.variables[keys[i]] + '\'';
+          }
+          const r = RegExp('\\$' + keys[i], 'g')
+          rawQuery = rawQuery.replace(r, body.variables[keys[i]]);
+        }
+        rawQuery = rawQuery.replace(/\n/g, '');
+        rawQuery = ' query { ' + rawQuery + ' } ';
+        body = {
+          operationName : body.operation,
+          query : rawQuery,
+          variables: null,
+        }
+        options.body = JSON.stringify(body);
+      }
+
       linkFetch(uri, options)
         .then(response => {
           // Forward the response on the context.
