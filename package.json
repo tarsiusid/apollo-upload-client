@@ -1,4 +1,9 @@
 {
+  "name": "apollo-upload-client",
+  "version": "9.1.0",
+  "description": "An Apollo Link for Apollo Client that allows FileList, File, Blob or ReactNativeFile instances within query or mutation variables and sends GraphQL multipart requests.",
+  "license": "MIT",
+  "main": "lib",
   "author": {
     "name": "Jayden Seric",
     "email": "me@jaydenseric.com",
@@ -13,7 +18,6 @@
     "apollo-link-http-common": "^0.2.5",
     "extract-files": "^4.0.0"
   },
-  "description": "An Apollo Link for Apollo Client that allows FileList, File, Blob or ReactNativeFile instances within query or mutation variables and sends GraphQL multipart requests.",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
@@ -59,13 +63,10 @@
     "react",
     "native"
   ],
-  "license": "MIT",
   "lint-staged": {
     "*.js": "eslint",
     "*.{json,yml,md}": "prettier -l"
   },
-  "main": "lib",
-  "name": "apollo-upload-client",
   "prettier": {
     "proseWrap": "never",
     "singleQuote": true,
@@ -98,6 +99,5 @@
         "apollo-link-http-common"
       ]
     }
-  ],
-  "version": "9.1.0"
+  ]
 }
