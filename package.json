@@ -1,32 +1,4 @@
 {
-  "_args": [
-    [
-      "apollo-upload-client@9.1.0",
-      "/home/herpiko/src/tarsius/frontend"
-    ]
-  ],
-  "_from": "apollo-upload-client@9.1.0",
-  "_id": "apollo-upload-client@9.1.0",
-  "_inBundle": false,
-  "_integrity": "sha512-ZN5gsbBjImEZTWWTUHpCEGDasnoBGbaODpznQ5EawyNHceuFYSNJbbft+ZZ841vZAcj9XZdKUKoaLBlMZ/r7nw==",
-  "_location": "/apollo-upload-client",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "apollo-upload-client@9.1.0",
-    "name": "apollo-upload-client",
-    "escapedName": "apollo-upload-client",
-    "rawSpec": "9.1.0",
-    "saveSpec": null,
-    "fetchSpec": "9.1.0"
-  },
-  "_requiredBy": [
-    "/vue-cli-plugin-apollo"
-  ],
-  "_resolved": "https://registry.npmjs.org/apollo-upload-client/-/apollo-upload-client-9.1.0.tgz",
-  "_spec": "9.1.0",
-  "_where": "/home/herpiko/src/tarsius/frontend",
   "author": {
     "name": "Jayden Seric",
     "email": "me@jaydenseric.com",
