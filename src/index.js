@@ -164,7 +164,7 @@ exports.createUploadLink = ({
             // Otherwise, it must be a string
             val = '\'' + body.variables[keys[i]] + '\'';
           }
-          const r = RegExp('\\$' + keys[i], 'g')
+          const r = RegExp('\\$' + keys[i], 'i')
           rawQuery = rawQuery.replace(r, body.variables[keys[i]]);
         }
         rawQuery = rawQuery.replace(/\n/g, '');
